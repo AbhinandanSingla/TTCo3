@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Co3 TimeTable</title>
+    <style>
+        .tt {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active, .tt:hover {
+            background-color: #555;
+        }
+
+        .ttContent {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<section class="timeTable">
+    <h1>TimeTable for CO3</h1>
+    <h4>For any error in timeTable you r free hold neck of Co3 Gr Mr. Dhruv Mistra </h4>
+    <div class="ttContainer">
+        <button class="tt">Monday</button>
+        <div class="ttContent">
+            <label for="s">asdsadasdasdasdas: </label>
+            <a href="" class="ttlink" id="s">adafsdfsdfsfsf</a>
+        </div>
+    </div>
+</section>
+<script src="loadTT.js"></script>
+<script>
+    var coll = document.getElementsByClassName("tt");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            console.log(content.scrollHeight)
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+    }
+</script>
+</body>
+</html>
